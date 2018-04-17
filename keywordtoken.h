@@ -25,26 +25,25 @@ class KeywordToken : public Token
 {
  public:
   // Construct an uninitialized keyword token.
-  KeywordToken();
+  explicit KeywordToken();
 
   ~KeywordToken();
 
   // Construct a keywork token with an attribute.
-  KeywordToken(keyword_attr_type attr);
+  explicit KeywordToken(keyword_attr attribute = keyword_attr::KW_NO_ATTR);
 
   // Return the attribute of this token
-  keyword_attr_type get_attribute();
+  keyword_attr get_attribute() const;
 
   // Set the attribute of this token
   void set_attribute(keyword_attr_type attr);
 
   // For debugging only.  Won't be used by lexical analyzer.
-  string *to_string() const;
+  string to_string() const;
 
- private:
-
-  // This tokens attribute
-  keyword_attr_type attribute;
+private:
+	// The attribute of this keyword token.
+	const keyword_attr attribute;
 };
 
 #endif

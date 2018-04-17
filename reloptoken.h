@@ -23,11 +23,11 @@ class RelopToken : public Token
 
   ~RelopToken();
 
-  relop_attr_type get_attribute();
+  relop_attr_type get_attribute() const;
 
   void set_attribute(relop_attr_type attr);
 
-  string *to_string() const;
+  string to_string() const;
 
  private:
   relop_attr_type attribute;

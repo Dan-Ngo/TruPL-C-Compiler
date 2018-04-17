@@ -13,7 +13,7 @@ class EofToken : public Token
   EofToken ();
   ~EofToken ();
 
-  string *to_string() const;
+  string to_string() const;
 
 };
 

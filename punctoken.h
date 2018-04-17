@@ -23,10 +23,10 @@ class PuncToken : public Token
 
   PuncToken(punc_attr_type attr);
 
-  punc_attr_type get_attribute();
+  punc_attr_type get_attribute() const;
   void set_attribute (punc_attr_type type);
 
-  string *to_string() const;
+  string to_string() const;
 
  private:
   punc_attr_type attribute;

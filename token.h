@@ -27,7 +27,7 @@ class Token
 
  public:
   // Default constructor
-  Token();
+  Token(token_type tokentype = token_type::TOKEN_NO_TYPE);
 
   /* Default destructor
 
@@ -47,7 +47,7 @@ class Token
      function will be called, even if we reference the object
      through a base (super) class object.
   */
-  virtual string *to_string() const {
+  virtual string to_string() const {
     return NULL;
   }
 
@@ -58,9 +58,9 @@ class Token
   // Return the type of this token.
   token_type_type get_token_type() const;
 
- private:
-  // The type of the tokens
-  token_type_type type;
+private:
+	// The type of this token.
+	token_type_type type;
 
 };
 

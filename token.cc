@@ -1,6 +1,6 @@
 #include "token.h"
 
-Token::Token()
+Token::Token(token_type tokentype)
 {
   type = TOKEN_NO_TYPE;
 }

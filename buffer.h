@@ -21,6 +21,7 @@ using namespace std;
 class Buffer
 {
  public:
+	 std::list<char> buffer;
 
   // Open the program file and initialize the scanner buffer.
   Buffer(char *filename);
@@ -35,23 +36,24 @@ class Buffer
   // Put a character back at the front of the buffer.
   void unread_char (char c);
   
-  
- private:
+  // Returns count of characters in buffer
+  int count();
 
+  void fill_buffer();
+
+ private:
+	 char c;
   static const int MAX_BUFFER_SIZE = 1024;
  
   // The stream object for the source file.
-  ifstream source_file;
+  std::ifstream source;
   
   /* If something catastrophic happens in the buffer, print
      an error message and then call this method to exit. */
   void buffer_fatal_error() const;
   
   // Useful utility function.  Is c a whitespace char?
-  inline bool is_whitespace (const char c)
-  {
-    return (c == SPACE || c == TAB || c == NEW_LINE);
-  }
+  inline bool is_whitespace(const char c);
   
   // Probably some other stuff too.
   

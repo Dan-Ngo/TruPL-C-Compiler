@@ -52,7 +52,7 @@ class Scanner
 
   inline bool is_space(char c) const
   {
-    return c == ' ';
+    return c == SPACE || c == NEW_LINE || c == TAB || c == COMMENT_MARKER || c == EOF_MARKER;
   }
 
   /* If a lexical error OR an internal scanner error occurs,
